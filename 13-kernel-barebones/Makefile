@@ -28,5 +28,11 @@ os-image.bin: bootsect.bin kernel.bin
 run: os-image.bin
 	qemu-system-i386 -fda $<
 
+server: os-image.bin
+	qemu-system-i386 -fda $< -S -s
+
+client:${BIN}
+	gdb -q -ex "target remote :1234" -ex "set architecture i8086" -ex "b *0x7c00" -x ../gdbinit
+
 clean:
-	rm *.bin *.o *.dis
+	rm -rf *.bin *.o *.dis

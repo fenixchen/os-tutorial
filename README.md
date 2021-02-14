@@ -1,3 +1,8 @@
+sudo apt install nasm
+sudo apt install qemu-system-x86_64
+
+
+
 os-tutorial
 ===========
 

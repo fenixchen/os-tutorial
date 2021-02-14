@@ -13,6 +13,8 @@ call print_nl
 
 mov dx, 0x12fe
 call print_hex
+call print_nl
+
 
 ; that's it! we can hang now
 jmp $
